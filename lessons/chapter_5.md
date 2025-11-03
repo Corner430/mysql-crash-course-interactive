@@ -264,17 +264,22 @@
   Safe          |  50.00
   JetPack 1000  |  35.00
 
-示例 3: 按供应商分组，价格排序
+示例 3: 按供应商排列，同一供应商内按价格排序
   SELECT vend_id, prod_name, prod_price 
   FROM products
   ORDER BY vend_id, prod_price DESC;
+  
+  说明：先按 vend_id 升序，相同供应商的产品再按价格降序
 
-示例 4: 复杂查询 - 找出最贵的ACME产品
-  SELECT prod_name, prod_price 
+示例 4: 多列混合方向排序
+  SELECT vend_id, prod_price, prod_name 
   FROM products
-  WHERE vend_id = 1003
-  ORDER BY prod_price DESC
-  LIMIT 1;
+  ORDER BY vend_id DESC, prod_price ASC, prod_name DESC;
+  
+  说明：
+  - vend_id 降序（1005 → 1001）
+  - 相同供应商内，价格升序（便宜 → 贵）
+  - 相同价格内，名称降序（Z → A）
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
