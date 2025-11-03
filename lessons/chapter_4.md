@@ -55,8 +55,14 @@
    
    说明：只返回前 5 行结果
    
-   LIMIT 5, 3  -- 从第 5 行开始，返回 3 行
-   LIMIT 3 OFFSET 5  -- 同上，MySQL 5+ 语法
+   ⚠️ 重要：行数从 0 开始计数！
+   - 第 1 行是 0，第 2 行是 1，以此类推
+   - LIMIT 5, 3  表示从第 6 行（索引5）开始，返回 3 行
+   - LIMIT 3 OFFSET 5  同上，MySQL 5+ 语法（推荐）
+   
+   💡 如果行数不够：
+   - LIMIT 100 但只有 14 行 → 返回全部 14 行，不报错
+   - LIMIT 10 OFFSET 20 但只有 14 行 → 返回空结果集
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -167,9 +173,11 @@
    SELECT DISTINCT vend_id, prod_price FROM products;
    只有 vend_id 和 prod_price 都不同时才算不同
 
-5. LIMIT 的两种语法
-   LIMIT 5, 3      -- 旧语法
-   LIMIT 3 OFFSET 5 -- 新语法（推荐）
+5. LIMIT 的关键要点
+   - 行数从 0 开始计数（第1行是0，第2行是1）
+   - LIMIT 5, 3  表示从索引5（第6行）开始取3行
+   - LIMIT 3 OFFSET 5  同上（推荐使用此语法）
+   - 如果请求的行数超过实际行数，返回所有可用行，不报错
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -203,6 +211,14 @@
 
 示例 5: 分页显示（每页5条，显示第2页）
   SELECT prod_name FROM products LIMIT 5 OFFSET 5;
+  -- OFFSET 5 表示跳过前5行（索引0-4），从索引5开始
+
+示例 6: LIMIT 超出范围的情况
+  SELECT prod_name FROM products LIMIT 100;
+  -- 即使只有14个产品，也不会报错，返回全部14行
+  
+  SELECT prod_name FROM products LIMIT 5 OFFSET 20;
+  -- 起始位置超出总行数，返回空结果集（0行）
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
