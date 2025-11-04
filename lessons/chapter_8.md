@@ -50,7 +50,8 @@
    示例3：以s开头、e结尾
    WHERE prod_name LIKE 's%e'
    
-   匹配：Safe、Sling（如果以e结尾）
+   匹配：Safe
+   不匹配：Sling（以g结尾，不是e）
    
    重要：%可以匹配0个字符
    'jet%' 能匹配 'jet'
@@ -108,14 +109,16 @@
   WHERE prod_name LIKE 's%';
 
 
-练习 4: 查找第二个字符是o的产品
+练习 4: 查找第二个字符是a的产品
 ──────────────────────────────────────
-使用_通配符查找第二个字符是'o'的产品
+使用_通配符查找第二个字符是'a'的产品
 
 你的SQL：
   SELECT prod_name 
   FROM products
-  WHERE prod_name LIKE '_o%';
+  WHERE prod_name LIKE '_a%';
+  
+  结果：Safe, Carrots
 
 
 练习 5: 查找恰好X个字符的产品ID
@@ -179,13 +182,19 @@
 
 挑战 5: 多通配符组合
 ──────────────────────────────────────
-查找产品名以字母开头，包含数字，且长度至少5个字符
+查找产品名中包含"ton"且以"anvil"结尾的产品
 
 你的SQL：
   SELECT prod_name 
   FROM products
-  WHERE prod_name LIKE '%[0-9]%'
-    AND LENGTH(prod_name) >= 5;
+  WHERE prod_name LIKE '%ton%'
+    AND prod_name LIKE '%anvil';
+  
+  结果：.5 ton anvil, 1 ton anvil, 2 ton anvil
+
+💡 注意：
+  用 LIKE 通配符无法直接匹配"包含数字"
+  这需要正则表达式（第9章学习）
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
