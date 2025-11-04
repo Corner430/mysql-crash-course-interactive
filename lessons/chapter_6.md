@@ -44,7 +44,7 @@
    WHERE prod_name = 'Fuses';
    
    说明：查找产品名为 'Fuses' 的产品
-   注意：字符串用单引号
+   注意：字符串需要用引号括起来（推荐单引号）
 
 
 4️⃣  不匹配检查
@@ -207,13 +207,18 @@
 
 ⚠️  单引号还是双引号？
     
-    字符串值必须用单引号括起来
-    ✓ WHERE prod_name = 'Fuses'
-    ✗ WHERE prod_name = Fuses
+    字符串值必须用引号括起来：
+    ✓ WHERE prod_name = 'Fuses'   (推荐：单引号)
+    ✓ WHERE prod_name = "Fuses"   (也可以：双引号)
+    ✗ WHERE prod_name = Fuses     (错误：没有引号)
     
-    数值不需要引号
+    💡 最佳实践：使用单引号
+    - 单引号是SQL标准，兼容性更好
+    - 某些SQL模式下双引号用于标识符（表名/列名）
+    
+    数值不需要引号：
     ✓ WHERE prod_price = 2.50
-    ✗ WHERE prod_price = '2.50'  (虽然也能工作)
+    ✗ WHERE prod_price = '2.50'  (虽然MySQL会自动转换，但不规范)
 
 
 ⚠️  WHERE 子句的位置

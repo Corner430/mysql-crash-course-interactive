@@ -223,9 +223,11 @@ learn_chapter() {
     
     show_header
     
-    # 显示章节内容
-    cat "$lesson_file"
+    # 显示章节内容（使用 less 分页器，从头开始显示）
+    less -R "$lesson_file"
     
+    # 阅读完成后显示分隔线
+    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo ""
     echo -e "${GREEN}选项：${NC}"
     echo "  1. 进入 MySQL 实践"
