@@ -455,4 +455,3 @@ SHOW FULL COLUMNS FROM customers;
 
 字符集和校对对国际化应用至关重要！
 
-选择 "1. 进入 MySQL 实践" 开始练习

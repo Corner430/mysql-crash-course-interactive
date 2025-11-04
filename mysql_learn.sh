@@ -221,13 +221,15 @@ learn_chapter() {
         return
     fi
     
-    show_header
-    
     # 显示章节内容（使用 less 分页器，从头开始显示）
-    less -R "$lesson_file"
+    # -R: 保留颜色
+    # -P: 自定义底部提示信息
+    less -R -P"第${chapter}章学习内容 | 按 q 退出阅读，进入选项菜单 - %pb\%" "$lesson_file"
     
-    # 阅读完成后显示分隔线
-    echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    # 阅读完成后清屏，重新显示标题和选项菜单
+    clear
+    show_header
+    echo -e "${CYAN}第 ${chapter} 章学习完成！${NC}"
     echo ""
     echo -e "${GREEN}选项：${NC}"
     echo "  1. 进入 MySQL 实践"

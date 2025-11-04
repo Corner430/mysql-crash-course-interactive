@@ -510,4 +510,3 @@ SHOW FULL TABLES WHERE table_type = 'VIEW';
 2. 在测试数据库中练习
 3. 完成后删除测试数据库
 
-选择 "1. 进入 MySQL 实践" 开始练习

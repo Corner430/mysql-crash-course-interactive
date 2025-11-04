@@ -557,4 +557,3 @@ SHOW TABLE STATUS FROM crashcourse;
 
 事务是保证数据完整性的核心机制！
 
-选择 "1. 进入 MySQL 实践" 开始练习

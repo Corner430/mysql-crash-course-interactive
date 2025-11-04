@@ -241,4 +241,3 @@
 现在就打开 MySQL，在 crashcourse 数据库中
 试试上面的所有SQL语句吧！
 
-选择 "1. 进入 MySQL 实践" 开始练习

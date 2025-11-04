@@ -504,4 +504,3 @@ SELECT user, host FROM mysql.user;
 
 数据库安全至关重要，永远不要掉以轻心！
 
-选择 "1. 进入 MySQL 实践" 开始练习

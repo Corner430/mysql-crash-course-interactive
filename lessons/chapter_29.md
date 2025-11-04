@@ -538,4 +538,3 @@ WHERE table_schema = 'crashcourse';
 
 数据库维护是保证系统稳定运行的关键！
 
-选择 "1. 进入 MySQL 实践" 开始练习

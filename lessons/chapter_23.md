@@ -633,4 +633,3 @@ SHOW PROCEDURE STATUS WHERE db = 'crashcourse';
 
 存储过程是数据库编程的重要工具！
 
-选择 "1. 进入 MySQL 实践" 开始练习

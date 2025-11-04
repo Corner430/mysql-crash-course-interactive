@@ -541,4 +541,3 @@ SHOW TRIGGERS FROM crashcourse;
 
 触发器是强大的工具，但要谨慎使用！
 
-选择 "1. 进入 MySQL 实践" 开始练习

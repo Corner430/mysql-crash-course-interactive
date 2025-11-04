@@ -466,4 +466,3 @@ SELECT * FROM customers WHERE cust_id = 10001;
 -- 模拟更新（只是查看会影响哪些行）
 SELECT * FROM customers WHERE cust_state = 'CA';
 
-选择 "1. 进入 MySQL 实践" 开始练习

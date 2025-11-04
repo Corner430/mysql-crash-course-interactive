@@ -613,7 +613,6 @@ EXPLAIN SELECT cust_id, cust_name FROM customers;
 
 性能优化是一个持续的过程！
 
-选择 "1. 进入 MySQL 实践" 开始练习
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

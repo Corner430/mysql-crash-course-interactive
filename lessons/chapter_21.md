@@ -538,4 +538,3 @@ SHOW INDEX FROM customers;
 ⚠️  不要在 crashcourse 数据库中执行 CREATE/ALTER/DROP
     这些操作会修改数据库结构！
 
-选择 "1. 进入 MySQL 实践" 开始练习
