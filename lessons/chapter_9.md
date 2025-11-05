@@ -82,7 +82,7 @@
    匹配：包含点号的产品
 
 
-7️⃣  匹配字符类
+7️⃣  匹配字符类（POSIX字符类）
    ────────────────────────────────────
    [:alnum:]  - 字母和数字
    [:alpha:]  - 字母
@@ -91,8 +91,15 @@
    [:upper:]  - 大写字母
    [:space:]  - 空白字符
    
-   示例：
-   WHERE prod_name REGEXP '[[:digit:]]'
+   💡 双重方括号说明：
+   标准写法：WHERE prod_name REGEXP '[[:digit:]]'
+   - 外层[]：字符集语法
+   - 内层[:digit:]：POSIX字符类名称
+   
+   MySQL 8.0简化写法：WHERE prod_name REGEXP '[:digit:]'
+   - 也能正常工作，但标准写法兼容性更好
+   
+   等价写法：WHERE prod_name REGEXP '[0-9]'
 
 
 8️⃣  匹配多个实例
